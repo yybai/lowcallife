@@ -1,0 +1,637 @@
+doctype html
+
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title Savory — Free Website Template, Free HTML5 Template by GetTemplates.co
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='Free HTML5 Website Template by GetTemplates.co')
+		meta(name='keywords', content='free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive')
+		meta(name='author', content='GetTemplates.co')
+		// Facebook and Twitter integration
+		meta(property='og:title', content='')
+		meta(property='og:image', content='')
+		meta(property='og:url', content='')
+		meta(property='og:site_name', content='')
+		meta(property='og:description', content='')
+		meta(name='twitter:title', content='')
+		meta(name='twitter:image', content='')
+		meta(name='twitter:url', content='')
+		meta(name='twitter:card', content='')
+		link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Kaushan+Script', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Handlee', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Londrina Solid', rel='stylesheet')
+		
+		// Animate.css
+		link(rel='stylesheet', href='css/animate.css')
+		link(href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css")
+		// Icomoon Icon Fonts
+		link(rel='stylesheet', href='css/icomoon.css')
+		// Themify Icons
+		link(rel='stylesheet', href='css/themify-icons.css')
+		// Bootstrap
+		link(rel='stylesheet', href='css/bootstrap.css')
+		// Magnific Popup
+		link(rel='stylesheet', href='css/magnific-popup.css')
+		// Bootstrap DateTimePicker
+		link(rel='stylesheet', href='css/bootstrap-datetimepicker.min.css')
+		// Owl Carousel
+		link(rel='stylesheet', href='css/owl.carousel.min.css')
+		link(rel='stylesheet', href='css/owl.theme.default.min.css')
+		// Theme style
+		link(rel='stylesheet', href='css/style.css')
+		// Modernizr JS
+		script(src='js/modernizr-2.6.2.min.js')
+		// FOR IE9 below
+		//if lt IE 9
+		script(src='js/respond.min.js')
+	body(style="")
+		div( class="alert alert-danger")
+			strong ATTENTION! 
+			p This site is in progress. For more information, please visit us later!
+		.gtco-loader
+		#page
+	  
+			nav.gtco-nav(role='navigation' style="background-image :url(/images/bg-img-2.jpeg);")
+				.gtco-container
+					.row
+						.col-sm-4.col-xs-12
+							#gtco-logo
+								a(href='/' style="color:black")
+									| LOWCAL LIFE 
+									em .
+						.col-xs-8.text-right.menu-1
+							ul
+								li
+									a(href='/' style="color:black") HOME
+								li.has-dropdown
+									a(href='services.html' style="color:black") Services
+									ul.dropdown
+										li
+											a(href='#gtco-features' style="color:black") WHO AER WE
+										li
+											a(href='#' style="color:black") CONTACT US
+								li
+									a(href='contact.html' style="color:black") Contact
+								li
+									span(class="icon" style="margin-left:10px;")
+										i.ti-user
+									span(style="font-weight:bold;font-size:2rem;color:black;margin:10px 10px; ") Hi, 
+										a(href='/profile' style="font-weight:bold;font-size:2rem;color:black;") #{x.username}
+									span
+										a#logout(href='/user/logout' style="color:black") Logout
+
+			//- div#gtco-header.gtco-cover.gtco-cover-sm.row(role='banner', style='background-image: url(images/img_bg_2.jpg);border:1px solid red;', data-stellar-background-ratio='0.5')
+			div(style="margin-top:80px;" class="text-center")
+
+				i(class="fa fa-star")
+				span(id="suggestion" class="text-center" style="font-family:Handlee;font-weight:bold;font-size:20px") 
+					| :
+					|  We recommend that your daily intake calory should be less than : #{result} kcal
+
+
+
+
+
+
+
+
+
+
+
+			div(id="main" style="max-width:1500px; margin-left:auto;margin-right:auto; margin-top:50px;" class="row")
+
+				div(id="d1" class="col-sm-2" style=" padding-top:10px; margin-bottom:10px;")
+					img(class="user-pic" src="./images/default-user-image.png" style="width:150px;")
+					br
+					a#edit(href='/profile/edit') EDIT PROFILE
+
+				div(id="d2" class="col-sm-4" style="")
+					h3.primary-color(style="font-family:Londrina Solid;font-size:4rem") Your Info
+					ul.list-group.list-group-flush
+
+						li.list-group-item
+							span(class="icon")
+								i(class="fa fa-user fa-1x") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							span : #{x.username} 
+						li.list-group-item
+							#age 
+								b AGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+								span #{x.age}
+						li.list-group-item
+							#gender 
+								b GENDER &nbsp;&nbsp;: 
+								span #{x.gender}
+						li.list-group-item
+							#height 
+								b HEIGHT &nbsp;&nbsp;&nbsp;&nbsp;: 
+								span #{x.height} cm
+						li.list-group-item
+							#weight 
+								b WEIGHT &nbsp;&nbsp;: 
+								span #{x.weight} kg
+
+
+					button(type="button" id="showUpdate" class="btn btn-info" style="margin-left:2px; text-align:center") UPDATE WEIGHT
+					div(id="changeWeight" style="")
+						input(id="weightInput" placeholder = "  NEW WEIGHT" style="margin-right:10px;")
+						button(type="button" id="submitWeight" class="btn btn-info btn-sm") UPDATE
+						button(type="button" id="cancelWeight" class="btn btn-dark btn-sm" style="margin-left:5px") CANCEL
+				div(id="d2" class="col-sm-6" style="")
+					.col-md-8.col-md-offset-2
+						h2.primary-color(style="font-family:Londrina Solid;font-size:4rem") What did you eat today?
+						hr
+
+
+						input(id = "forTotal", style = "visibility:hidden")
+						div#input_form
+							select(name="ds",class="input-ds form-control" id = "ds")
+								option(value="ads" selected="selected") From All Data Source
+								option(value="Standard Reference") Standard Reference
+								option(value="Branded Food Products") Branded Food Products
+							input(id="intakeInputBox" class="form-control" style="margin-top:10px;")
+							div( class="btn-group" style="width:100%;margin-top:10px;")
+
+								button(id="intake-search" class="btn btn-info" style="width:100%") SEARCH
+
+								button(id="intake-submit" class="btn btn-info" style="width:100%") SAVE
+						hr(style="max-width:150px;border-width:3px;border-color:orange;")
+						
+			div(id="searchDiv" style="max-width:1500px; margin-left:auto;margin-right:auto; margin-top:50px;" class="row")
+				
+				.col-md-7(style="")
+					hr(style="border-width:3px; border-color:grey")
+					h2.cursive-font.primary-color.text-center#searchresult Search Result
+					ul#searchResult(class="list-group")
+
+				.col-md-5(style="")
+					hr(style="border-width:3px; border-color:orange;width:50px")
+					h2.cursive-font.primary-color.text-center#searchresult You Selected ...
+					div(id="dailyResult" style="height:400px;overflow-x:hidden")
+					hr(style="border-width:3px; border-color:orange;width:50px;" id="totalDivide")
+					div#dailyTotal
+					div(id="recalculate" class="btn btn-info" style="margin-top:-31px;float:right") RE-ENTER
+
+
+			.gtco-section(style="")
+				.gtco-container(style=";max-width: 1300px;")
+					.row(style="")
+						hr(style="max-width:150px;border-width:3px;border-color:orange;")
+						.col-md-8.col-md-offset-2.text-center.gtco-heading
+							h2.cursive-font.primary-color Statistics
+							ul(style="float:left")
+								li
+									span
+										b Graph : 
+									span We put your saved calory data and the date together, to construct a line graph. Move your mouse to the dot and you can see how many calories you took on that day.
+									
+									
+								li
+									span
+										b Table : 
+									span Statistic table is the place where you can manage your saved data. It shows the amount of calories saved on each day. You can also click delete to delete a certain row.
+									
+					.row(style="")
+						.col-lg-6.col-md-6.col-sm-6
+							div(id="forCal" style="margin-top:20px; box-shadow:5px 5px 10px gray;" class="fh5co-card-item " data-toggle="popover" title="Calory Graph" data-content="With X axis as the date, Y axis as the total calory which saved on that day.")
+								canvas(id="calChart" )
+								div(style="height:100px;")
+								.fh5co-text
+									h2 Intake Calory Graph
+									p Far far away, behind the word mountains, far from the countries Vokalia..
+
+						.col-lg-6.col-md-6.col-sm-6
+							div(id='forWeight' style="margin-top:20px; box-shadow:5px 5px 10px gray;" class="fh5co-card-item")
+								canvas(id="weightChart" )
+								div(style="height:100px;")
+								.fh5co-text
+									h2 Fresh Mushrooms
+									p Far far away, behind the word mountains, far from the countries Vokalia..
+					hr(style="max-width:150px;border-width:3px;border-color:orange;")
+					.row(style="margin-top:20px; margin-bottom:20px;")
+
+						.col-md-8.col-md-offset-2.text-center.gtco-heading
+							h2.cursive-font.primary-color Saved Calories
+						.col-lg-8.col-md-8.col-sm-8.text-center
+							div(id="tableDiv" class="table-responsive text-center")
+								p(id="tableTitle") YOUR SAVED CALORIES
+								div(class="tbl-header")
+									table(cellpadding="0" cellspacing="0" border="0")
+										thead
+											tr
+												th USER
+												th CAL
+												th WEIGHT
+												th DATE
+												th 
+
+								div(class="tbl-content")
+									table(id="result_table" class="table table-striped " cellpadding="0" cellspacing="0" border="0")
+
+										tbody
+											each calory in calories
+												tr(id=`${calory._id}`)
+													td=calory.user
+													td=calory.calory
+													td=calory.weight
+													td(id="dateValue")=calory.createdAt
+													td
+														button(class="deleteTotal btn btn-info")(tid = calory._id) delete
+						.col-lg-4.col-md-4.col-sm-4
+
+							i(class="fa fa-bullhorn fa-3x")
+							div(style="")
+								
+								p When we construct the graph, we add the total number of calories of each day. For example, if a user saved intake calories more than once in a day, there will be more than two rows which contain the saved calories. Therefore, the total calory on the graph will be the total amount on that day.
+
+
+						//- .col-lg-4.col-md-4.col-sm-6
+						//-	 a.fh5co-card-item.image-popup(href='images/img_1.jpg')
+						//-		 figure
+						//-			 .overlay
+						//-				 i.ti-plus
+						//-			 img.img-responsive(src='images/img_1.jpg', alt='Image')
+						//-		 .fh5co-text
+						//-			 h2 Fresh Mushrooms
+						//-			 p Far far away, behind the word mountains, far from the countries Vokalia..
+						//-			 p
+						//-				 span.price.cursive-font $19.15
+						//- .col-lg-4.col-md-4.col-sm-6
+						//-	 a.fh5co-card-item.image-popup(href='images/img_1.jpg')
+						//-		 figure
+						//-			 .overlay
+						//-				 i.ti-plus
+						//-			 img.img-responsive(src='images/img_1.jpg', alt='Image')
+						//-		 .fh5co-text
+						//-			 h2 Fresh Mushrooms
+						//-			 p Far far away, behind the word mountains, far from the countries Vokalia..
+						//-			 p
+						//-				 span.price.cursive-font $19.15
+
+			.gtco-cover.gtco-cover-sm(style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+				.overlay
+				.gtco-container.text-center
+					.display-t
+						.display-tc
+							h1 “ Their high quality of service makes me back over and over again!”
+							p — John Doe, CEO of XYZ Co.
+			//- #gtco-subscribe
+			//- .gtco-container
+			//-   .row.animate-box
+			//-	 .col-md-8.col-md-offset-2.text-center.gtco-heading
+			//-	   h2.cursive-font Subscribe
+			//-	   p Be the first to know about the new templates.
+			//-   .row.animate-box
+			//-	 .col-md-8.col-md-offset-2
+			//-	   form.form-inline
+			//-		 .col-md-6.col-sm-6
+			//-		   .form-group
+			//-			 label.sr-only(for='email') Email
+			//-			 input#email.form-control(type='email', placeholder='Your Email')
+			//-		 .col-md-6.col-sm-6
+			//-		   button.btn.btn-default.btn-block(type='submit') Subscribe
+			footer#gtco-footer(role='contentinfo', style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+				.overlay
+				.gtco-container
+					.row.row-pb-md
+						.col-md-12.text-center
+							.gtco-widget
+								h3 Get In Touch
+								ul.gtco-quick-contact
+									li
+										a(href='#')
+										i.icon-phone
+										|  +1 234 567 890
+									li
+										a(href='#')
+										i.icon-mail2
+										|  info@GetTemplates.co
+									li
+										a(href='#')
+										i.icon-chat
+										|  Live Chat
+							.gtco-widget
+								h3 Get Social
+								ul.gtco-social-icons
+									li
+										a(href='#')
+										i.icon-twitter
+									li
+										a(href='#')
+										i.icon-facebook
+									li
+										a(href='#')
+										i.icon-linkedin
+									li
+										a(href='#')
+										i.icon-dribbble
+						.col-md-12.text-center.copyright
+							p
+								small.block © 2016 Free HTML5. All Rights Reserved.
+								small.block
+									| Designed by 
+									a(href='http://gettemplates.co/', target='_blank') GetTemplates.co
+									|  Demo Images: 
+									a(href='http://unsplash.com/', target='_blank') Unsplash
+
+		.gototop.js-top
+			a.js-gotop(href='#')
+				i.icon-arrow-up
+		// jQuery
+		script(src='js/jquery.min.js')
+		// jQuery Easing
+		script(src='js/jquery.easing.1.3.js')
+		// Bootstrap
+		script(src='js/bootstrap.min.js')
+		// Waypoints
+		script(src='js/jquery.waypoints.min.js')
+		// Carousel
+		script(src='js/owl.carousel.min.js')
+		// countTo
+		script(src='js/jquery.countTo.js')
+		// Stellar Parallax
+		script(src='js/jquery.stellar.min.js')
+		// Magnific Popup
+		script(src='js/jquery.magnific-popup.min.js')
+		script(src='js/magnific-popup-options.js')
+		script(src='js/moment.min.js')
+		script(src='js/bootstrap-datetimepicker.min.js')
+		// Main
+		script(src='js/main.js')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js")
+		//- script(src="/js/main.js")
+		
+		script.
+			const cal = !{JSON.stringify(calories)};
+			const user = !{JSON.stringify(x)};
+			const r = !{JSON.stringify(result)};
+
+
+			$('[data-toggle="popover"]').popover(); 
+
+			//- console.log(cal);
+
+			var caldata=[];
+			var weightdata=[];
+			var callable=[];
+			var dailyTotal = 0;
+			var day = "";
+			var index = 0;
+			var healthyCal = [];
+			console.log(callable);
+			//inserting calory and date data into graph
+			while(index<cal.length-1 ||  cal.length == 1 ){
+				if(cal.length == 1){
+					console.log(cal);
+					caldata.push(cal[index].calory);
+					callable.push(cal[index].createdAt.substring(5,10));
+					healthyCal.push(r);
+					weightdata.push(cal[index].weight);
+					break;
+				}else{
+					if( (cal[index].createdAt.substring(5,10) !== cal[index+1].createdAt.substring(5,10))  && ( (index+1) < cal.length-1 )   ) {
+						caldata.push(cal[index].calory);
+						callable.push(cal[index].createdAt.substring(5,10));
+						healthyCal.push(r);
+						weightdata.push(cal[index].weight);
+						index++;
+					}else if((cal[index].createdAt.substring(5,10) !== cal[index+1].createdAt.substring(5,10)) && ( (index+1) == cal.length-1) ){
+						caldata.push(cal[index].calory);
+						callable.push(cal[index].createdAt.substring(5,10));
+						healthyCal.push(r);
+						caldata.push(cal[index+1].calory);
+						callable.push(cal[index+1].createdAt.substring(5,10));
+						healthyCal.push(r);
+						weightdata.push(cal[index].weight);
+						weightdata.push(cal[index+1].weight);
+						index++;
+					}else{ 
+						for(j=index;j<cal.length-1;j++){
+							if ( (cal[j].createdAt.substring(5,10) === cal[j+1].createdAt.substring(5,10) )	 &&   ((j+1) < cal.length-1)	)   {
+								var v = parseInt(cal[j].calory);
+								dailyTotal = dailyTotal + v;
+							}else if ( (cal[j].createdAt.substring(5,10) === cal[j+1].createdAt.substring(5,10) )	 &&   ((j+1) == cal.length-1)	){
+								
+								var v = parseInt(cal[j].calory);
+								dailyTotal = dailyTotal + v;
+								var vl = parseInt(cal[j+1].calory);
+								dailyTotal = dailyTotal + vl;
+								var c = dailyTotal.toString();
+								caldata.push(c);
+								callable.push(cal[j].createdAt.substring(5,10));
+								weightdata.push(cal[j+1].weight);
+								healthyCal.push(r);
+								index = j+111;
+								break;
+							}else{
+								var v = parseInt(cal[j].calory);
+								
+								dailyTotal = dailyTotal + v;
+								var c = dailyTotal.toString();
+								caldata.push(c);
+								callable.push(cal[j].createdAt.substring(5,10));
+								weightdata.push(cal[j].weight);
+								healthyCal.push(r);
+								index = j+1;
+								if (index == cal.length-1){
+									caldata.push(cal[index].calory);
+									callable.push(cal[index].createdAt.substring(5,10));
+									weightdata.push(cal[index].weight);
+									healthyCal.push(r);
+									index = 99999;
+								}
+								break;
+							}	
+						}
+						dailyTotal = 0;
+
+					}
+				}
+
+				
+			}
+			console.log(callable);
+			console.log(weightdata);
+			
+
+
+
+			//draw graph
+			var ctx = document.getElementById("calChart").getContext('2d');
+			var ctx2 = document.getElementById("weightChart").getContext('2d');
+			var myChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: callable,
+					datasets: [{
+						label: 'Intake Calories',
+						data: caldata,
+						//- backgroundColor: ['rgba(255,255,255,1)'
+						//- ],
+						//- borderColor: [
+						//-	 'rgba(0,0,0,5)'
+						//- ],
+						
+						borderColor:'rgba(0,0,0,1)',
+						borderWidth: 1,
+						fill:false
+					},{
+						label: 'GOAL for the day',
+						data: healthyCal,
+						borderColor:'rgba(255,0,17,1)',
+						borderWidth: 1,
+						fill:false
+
+					}
+					
+					]
+				},
+				options: {
+					events:['mousemove','touched'],
+					tooltips:{
+						mode:'index',
+					},
+					scales: {
+						yAxes: [{
+							
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					}
+				}
+			});
+
+
+			var myChart = new Chart(ctx2, {
+				type: 'line',
+				data: {
+					labels: callable,
+					datasets: [{
+						label: 'Weights',
+						data: weightdata,
+						borderColor:'rgba(0,0,0,1)',
+						borderWidth: 1,
+						fill:false
+					}
+					]
+				},
+				options: {
+					events:['mousemove','touched'],
+					tooltips:{
+						mode:'index',
+					},
+					scales: {
+						yAxes: [{
+							
+							ticks: {
+								beginAtZero:false
+							}
+						}]
+					}
+				}
+			});
+			
+
+
+
+			//submit daily calory to database
+			//- const socket = io();
+			//- $('#intake-submit').click(function(e) {
+			//-	 socket.emit('daily calory', { calory: $('#forTotal').val(), user: user.username });
+			//-	 window.alert("saved to database!");
+			//-	 location.reload();
+			//- })
+
+			$('#intake-submit').click(function(){
+				var uweight = user.weight;
+				var uname = user.username;
+				var ucal = $('#forTotal').val();
+
+				$.ajax({
+					type:'POST',
+					url:'/user/save/calory/'+uname+'/'+uweight+'/'+ucal,
+					success:function(res){
+						if(res.result === 'success'){
+							window.alert("Saved!");
+								//- $('#weight').html("weight : "+newWeight+" kg")
+								//- $('#showUpdate').show();
+								//- $('#changeWeight').hide();
+							location.reload();
+						}
+					}
+
+				})
+			})
+
+
+
+
+
+
+			$('#submitWeight').click(function(){
+				var newWeight = $('#weightInput').val();
+				$.ajax({
+					type:'POST',
+					url:'/students/update/weight/'+user._id+'/'+newWeight,
+					success:function(res){
+						if(res.result === 'success'){
+							window.alert("Updated!");
+							//- $('#weight').html("weight : "+newWeight+" kg")
+							//- $('#showUpdate').show();
+							//- $('#changeWeight').hide();
+							location.reload();
+						}
+					}
+				})
+				
+			})
+
+			//delete daily calory from database
+			$('.deleteTotal').click(function(e){
+				const tid = $(this).attr('tid');
+				$.ajax({
+					type:'POST',
+					url:'/students/delete',
+					data:{tid},
+					success:function(res){
+						if(res.result === 'success'){
+							window.alert("deleted!");
+							//- console.log(tid);
+							
+							$('#' +tid).remove();
+							
+							
+						}
+					}
+				})
+			})
+
+
+
+			
+
+
+
+			$(window).on("load resize ", function() {
+				var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+				$('.tbl-header').css({'padding-right':scrollWidth});
+			}).resize();

@@ -1,0 +1,263 @@
+doctype html
+
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title LOWCAL LIFE — KEEP HEALTHY EVERYDAY!
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='Free HTML5 Website Template by GetTemplates.co')
+		meta(name='keywords', content='free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive')
+		meta(name='author', content='GetTemplates.co')
+		// Facebook and Twitter integration
+		meta(property='og:title', content='')
+		meta(property='og:image', content='')
+		meta(property='og:url', content='')
+		meta(property='og:site_name', content='')
+		meta(property='og:description', content='')
+		meta(name='twitter:title', content='')
+		meta(name='twitter:image', content='')
+		meta(name='twitter:url', content='')
+		meta(name='twitter:card', content='')
+		link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Kaushan+Script', rel='stylesheet')
+		// Animate.css
+		link(rel='stylesheet', href='css/animate.css')
+		// Icomoon Icon Fonts
+		link(rel='stylesheet', href='css/icomoon.css')
+		// Themify Icons
+		link(rel='stylesheet', href='css/themify-icons.css')
+		// Bootstrap
+		link(rel='stylesheet', href='css/bootstrap.css')
+		// Magnific Popup
+		link(rel='stylesheet', href='css/magnific-popup.css')
+		// Bootstrap DateTimePicker
+		link(rel='stylesheet', href='css/bootstrap-datetimepicker.min.css')
+		// Owl Carousel
+		link(rel='stylesheet', href='css/owl.carousel.min.css')
+		link(rel='stylesheet', href='css/owl.theme.default.min.css')
+		// Theme style
+		link(rel='stylesheet', href='css/style.css')
+		// Modernizr JS
+		script(src='js/modernizr-2.6.2.min.js')
+		// FOR IE9 below
+		//
+			if lt IE 9script(src='js/respond.min.js')
+	body
+		div( class="alert alert-danger")
+			strong ATTENTION! 
+			p This site is in progress. For more information, please visit us later!
+		.gtco-loader
+		#page
+			// <div class="page-inner">
+			nav.gtco-nav(role='navigation')
+				.gtco-container
+					.row
+						.col-sm-4.col-xs-12
+							#gtco-logo
+								a(href='/')
+									| LOWCAL LIFE
+									em .
+						.col-xs-8.text-right.menu-1
+							ul
+								li
+									a(href='/') HOME
+								li.has-dropdown
+									a(href='services.html') Services
+									ul.dropdown
+										li
+											a(href='#gtco-features') WHO AER WE
+										li
+											a(href='#') CONTACT US
+								li
+									a(href='contact.html') Contact
+								li.btn-cta
+									a(href='/')
+										span LOGIN
+								li.btn-cta
+									a(href='regist.html')
+										span REGISTER
+
+			header#gtco-header.gtco-cover.gtco-cover-md(role='banner', style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+				.overlay
+				.gtco-container
+					.row
+						.col-md-12.col-md-offset-0.text-left
+							.row.row-mt-15em
+								.col-md-7.mt-text.animate-box(data-animate-effect='fadeInUp')
+									span.intro-text-small
+										| Hand-crafted by 
+										a(href='http://gettemplates.co', target='_blank') GetTemplates.co
+									h1.cursive-font Keep Healthy Everyday!
+								.col-md-4.col-md-push-1.animate-box(data-animate-effect='fadeInRight')
+									.form-wrap
+										.tab
+											.tab-content
+												.tab-content-inner.active(data-content='signup')
+													h3.cursive-font User Login
+													form(action='/user/login', method='POST')
+														.row.form-group
+															.col-md-12
+																label(for='activities') Username
+
+																input.form-control(name='username', type='text')
+														.row.form-group
+															.col-md-12
+																label Password
+																input.form-control(name='password', type='password', autocomplete='new-password',title="Reminder" data-toggle="popover" data-trigger="focus" data-content="Don't forget CAPS!")
+
+														.row.form-group
+															.col-md-12
+																button.btn.btn-primary.btn-block(type='submit') Login
+			#gtco-features
+				.gtco-container
+					.row
+						.col-md-8.col-md-offset-2.text-center.gtco-heading.animate-box
+							h2.cursive-font We Provide :
+							p
+								| Everyone can easily find what they eat today. By submitting the food they have eat, their intake calories and other nutritions will be stored to our database. Each user can also see the change of their weights, intake calories over time.
+					.row
+						.col-md-4.col-sm-6
+							.feature-center.animate-box(data-animate-effect='fadeIn')
+								span.icon
+									i.ti-face-smile
+								h3 Healthy body
+								p No doubt that, everyone wants to keep healthy.
+						.col-md-4.col-sm-6
+							.feature-center.animate-box(data-animate-effect='fadeIn')
+								span.icon
+									i.ti-link
+								h3 Professional Database
+								p
+									| We have over hundred thousands of different kinds of food for you. You can easily search for a food and lookup its nutritions.
+						.col-md-4.col-sm-6
+							.feature-center.animate-box(data-animate-effect='fadeIn')
+								span.icon
+									i.ti-user
+								h3 User friendly
+								p
+									| We aim to build a website which is suitable for every age of users. We provide clear and easy-to-use interface, simple but powerfull functions.
+						.col-md-4.col-sm-6
+							.feature-center.animate-box(data-animate-effect='fadeIn')
+								span.icon
+									i.ti-comments
+								h3 User community
+								p
+									| We do have a public chatting room for every registered users. Do you feel confused about how to control your weights and intake calories? Do you want to know what the others did? This is the right place for you.
+			.gtco-cover.gtco-cover-sm(style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+				.overlay
+				.gtco-container.text-center
+					.display-t
+						.display-tc
+							h2
+								| “ It is important to think positive thoughts about yourself and your journey to a healthy lifestyle. You may face hard times during your transition. The key is to stay focused on your goals and you will always reach them. Like Ralph Marston has said, "Your goals, minus your doubts, equal your reality.”
+							p — best-speech-topics.
+							h2 So why are you still waiting?
+							a.js-gotop.btn.btn-default(href='#', style='color:black') Join Us now!
+			#gtco-counter.gtco-section
+				.gtco-container
+					.row
+						.col-md-8.col-md-offset-2.text-center.gtco-heading.animate-box
+							h2.cursive-font.primary-color Fun Facts
+							p
+								| Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
+					.row
+						.col-md-3.col-sm-6.animate-box(data-animate-effect='fadeInUp')
+							.feature-center
+								span.counter.js-counter(data-from='0', data-to='5', data-speed='5000', data-refresh-interval='50') 1
+								span.counter-label Avg. Rating
+						.col-md-3.col-sm-6.animate-box(data-animate-effect='fadeInUp')
+							.feature-center
+								span.counter.js-counter(data-from='0', data-to='43', data-speed='5000', data-refresh-interval='50') 1
+								span.counter-label Food Types
+						.col-md-3.col-sm-6.animate-box(data-animate-effect='fadeInUp')
+							.feature-center
+								span.counter.js-counter(data-from='0', data-to='32', data-speed='5000', data-refresh-interval='50') 1
+								span.counter-label Chef Cook
+						.col-md-3.col-sm-6.animate-box(data-animate-effect='fadeInUp')
+							.feature-center
+								span.counter.js-counter(data-from='0', data-to='1985', data-speed='5000', data-refresh-interval='50') 1
+								span.counter-label Year Started
+			//- #gtco-subscribe
+			//- 	.gtco-container
+			//- 		.row.animate-box
+			//- 			.col-md-8.col-md-offset-2.text-center.gtco-heading
+			//- 				h2.cursive-font Subscribe
+			//- 				p Be the first to know about the new templates.
+			//- 		.row.animate-box
+			//- 			.col-md-8.col-md-offset-2
+			//- 				form.form-inline
+			//- 					.col-md-6.col-sm-6
+			//- 						.form-group
+			//- 							label.sr-only(for='email') Email
+			//- 							input#email.form-control(type='email', placeholder='Your Email')
+			//- 					.col-md-6.col-sm-6
+			//- 						button.btn.btn-default.btn-block(type='submit') Subscribe
+			footer#gtco-footer(role='contentinfo', style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+				.overlay
+				.gtco-container
+					.row.row-pb-md
+						.col-md-12.text-center
+							.gtco-widget
+								h3 Get In Touch
+								ul.gtco-quick-contact
+									li
+										a(href='#')
+											i.icon-phone
+											|  +1 234
+									li
+										a(href='#')
+											i.icon-mail2
+											|  info@GetTemplates.co
+									li
+										a(href='#')
+											i.icon-chat
+											|  Live Chat
+							.gtco-widget
+								h3 Get Social
+								ul.gtco-social-icons
+									li
+										a(href='#')
+											i.icon-twitter
+									li
+										a(href='#')
+											i.icon-facebook
+									li
+										a(href='#')
+											i.icon-linkedin
+									li
+										a(href='#')
+											i.icon-dribbble
+						.col-md-12.text-center.copyright
+							p
+								small.block © 2016 Free HTML5. All Rights Reserved.
+								small.block
+									| Designed by 
+									a(href='http://gettemplates.co/', target='_blank') GetTemplates.co
+									|  Demo Images: 
+									a(href='http://unsplash.com/', target='_blank') Unsplash
+			// </div>
+		.gototop.js-top
+			a.js-gotop(href='#')
+				i.icon-arrow-up
+		// jQuery
+		script(src='js/jquery.min.js')
+		// jQuery Easing
+		script(src='js/jquery.easing.1.3.js')
+		// Bootstrap
+		script(src='js/bootstrap.min.js')
+		// Waypoints
+		script(src='js/jquery.waypoints.min.js')
+		// Carousel
+		script(src='js/owl.carousel.min.js')
+		// countTo
+		script(src='js/jquery.countTo.js')
+		// Stellar Parallax
+		script(src='js/jquery.stellar.min.js')
+		// Magnific Popup
+		script(src='js/jquery.magnific-popup.min.js')
+		script(src='js/magnific-popup-options.js')
+		script(src='js/moment.min.js')
+		script(src='js/bootstrap-datetimepicker.min.js')
+		// Main
+		script(src='js/main.js')
