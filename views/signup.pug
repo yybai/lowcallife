@@ -22,31 +22,31 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=Kaushan+Script', rel='stylesheet')
 		// Animate.css
-		link(rel='stylesheet', href='css/animate.css')
+		link(rel='stylesheet', href='/css/animate.css')
 		// Icomoon Icon Fonts
-		link(rel='stylesheet', href='css/icomoon.css')
+		link(rel='stylesheet', href='/css/icomoon.css')
 		// Themify Icons
-		link(rel='stylesheet', href='css/themify-icons.css')
+		link(rel='stylesheet', href='/css/themify-icons.css')
 		// Bootstrap
-		link(rel='stylesheet', href='css/bootstrap.css')
+		link(rel='stylesheet', href='/css/bootstrap.css')
 		// Magnific Popup
-		link(rel='stylesheet', href='css/magnific-popup.css')
+		link(rel='stylesheet', href='/css/magnific-popup.css')
 		// Bootstrap DateTimePicker
-		link(rel='stylesheet', href='css/bootstrap-datetimepicker.min.css')
+		link(rel='stylesheet', href='/css/bootstrap-datetimepicker.min.css')
 		// Owl Carousel
-		link(rel='stylesheet', href='css/owl.carousel.min.css')
-		link(rel='stylesheet', href='css/owl.theme.default.min.css')
+		link(rel='stylesheet', href='/css/owl.carousel.min.css')
+		link(rel='stylesheet', href='/css/owl.theme.default.min.css')
 		// Theme style
-		link(rel='stylesheet', href='css/style.css')
+		link(rel='stylesheet', href='/css/style.css')
 		// Modernizr JS
-		script(src='js/modernizr-2.6.2.min.js')
+		script(src='/js/modernizr-2.6.2.min.js')
 		// FOR IE9 below
 		//
 			if lt IE 9script(src='js/respond.min.js')
 	body
 		div( class="alert alert-danger")
 			strong ATTENTION! 
-			p This site is in progress. For more information, please visit us later!
+			p This signup site is in progress. For more information, please visit us later!
 		.gtco-loader
 		#page
 			// <div class="page-inner">
@@ -78,42 +78,73 @@ html
 									a(href='regist.html')
 										span REGISTER
 
-			header#gtco-header.gtco-cover.gtco-cover-md(role='banner', style='background-image: url(images/background2.jpg)', data-stellar-background-ratio='0.5')
+			header#gtco-header.gtco-cover.gtco-cover-md(role='banner', style='background-image: url(/images/background2.jpg)', data-stellar-background-ratio='0.5')
 				.overlay
 				.gtco-container
 					.row
 						.col-md-12.col-md-offset-0.text-left
-							.row.row-mt-15em
-								.col-md-7.mt-text.animate-box(data-animate-effect='fadeInUp')
-									span.intro-text-small
-										| Hand-crafted by 
-										a(href='http://gettemplates.co', target='_blank') GetTemplates.co
-									h1.cursive-font Keep Healthy Everyday!
-								.col-md-4.col-md-push-1.animate-box(data-animate-effect='fadeInRight')
+							.row.row-mt-15em(style="margin-top:10rem")
+								.col-md-3.mt-text.animate-box(data-animate-effect='fadeInUp')
+									p hello
+								.col-md-8.col-md-push-1.animate-box(data-animate-effect='fadeInRight')
 									.form-wrap
 										.tab
 											.tab-content
 												.tab-content-inner.active(data-content='signup')
-													h3.cursive-font User Login
-													form(action='/user/login', method='POST')
+													h3.cursive-font User Signup
+													form(action='/user/signup', method='POST')
 														.row.form-group
-															.col-md-12
+															.col-md-6
 																label(for='activities') Username
-
-																input.form-control(name='username', type='text')
+																span  &nbsp;&nbsp;&nbsp;(you use this to login)
+																input.form-control(name='username', type='text',placeholder="Username")
+															.col-md-6
+																label(for='activities') Password
+																input.form-control(name='password', type='password',placeholder="Password")
+															.col-md-6
+																label(for='activities') First name
+																input.form-control(name='firstname', type='firstname',placeholder="First name")
+															.col-md-6
+																label(for='activities') Last name
+																input.form-control(name='lastname', type='lastname',placeholder="Last name")
+															.col-md-6
+																label(for='activities') Age 
+																input.form-control(name='age', type='age',placeholder="Age")
+															.col-md-6
+																label(for='activities') Email Address
+																span &nbsp;&nbsp;&nbsp;(No adds will be sent)
+																input.form-control(name='email', type='email',placeholder="Email")
+															.col-md-6
+																label(for='activities') Height
+																span &nbsp;&nbsp;&nbsp;(in cm)
+																input.form-control(name='height', type='height',placeholder="Height")
+															.col-md-6
+																label(for='activities') Weight
+																span &nbsp;&nbsp;&nbsp;(in kg)
+																input.form-control(name='weight', type='weight',placeholder="Weight")
+															.col-md-12
+																label Select Gender
+																select.form-control(name="gender" style="color:black")
+																	option(value="Gender" selected="selected" style="color:black") Gender
+																	option(value="Male" style="color:black") Male
+																	option(value="Female" style="color:black") Female
 														.row.form-group
 															.col-md-12
-																label Password
-																input.form-control(name='password', type='password', autocomplete='new-password',title="Reminder" data-toggle="popover" data-trigger="focus" data-content="Don't forget CAPS!")
+																button.btn.btn-primary.btn-block(type='submit') Sign up now
+														
+														//- .row.form-group
+														//- 	.col-md-12
+														//- 		label Password
+														//- 		input.form-control(name='password', type='password', autocomplete='new-password',title="Reminder" data-toggle="popover" data-trigger="focus" data-content="Don't forget CAPS!")
 
-														.row.form-group
-															.col-md-12
-																button.btn.btn-primary.btn-block(type='submit') Login
-													p.text-center Not a member yet?
-													.row.form-group
-														.col-md-12
-															//- button.btn.btn-primary.btn-block(id="signup") Sign up
-															a(href="/user/signup" class="btn.btn-primary.btn-block") Sign up
+														//- .row.form-group
+														//- 	.col-md-12
+														//- 		button.btn.btn-primary.btn-block(type='submit') Login
+													//- p.text-center Not a member yet?
+													//- .row.form-group
+													//- 	.col-md-12
+													//- 		//- button.btn.btn-primary.btn-block(id="signup") Sign up
+													//- 		a(href="/user/signup" class="btn.btn-primary.btn-block") Sign up
 			#gtco-features
 				.gtco-container
 					.row
@@ -149,7 +180,7 @@ html
 								h3 User community
 								p
 									| We do have a public chatting room for every registered users. Do you feel confused about how to control your weights and intake calories? Do you want to know what the others did? This is the right place for you.
-			.gtco-cover.gtco-cover-sm(style='background-image: url(images/background1.png)', data-stellar-background-ratio='0.5')
+			.gtco-cover.gtco-cover-sm(style='background-image: url(/images/background1.png)', data-stellar-background-ratio='0.5')
 				.overlay
 				.gtco-container.text-center
 					.display-t
@@ -198,7 +229,7 @@ html
 			//- 							input#email.form-control(type='email', placeholder='Your Email')
 			//- 					.col-md-6.col-sm-6
 			//- 						button.btn.btn-default.btn-block(type='submit') Subscribe
-			footer#gtco-footer(role='contentinfo', style='background-image: url(images/background3.jpg)', data-stellar-background-ratio='0.5')
+			footer#gtco-footer(role='contentinfo', style='background-image: url(/images/background3.jpg)', data-stellar-background-ratio='0.5')
 				.overlay
 				.gtco-container
 					.row.row-pb-md
@@ -246,23 +277,23 @@ html
 			a.js-gotop(href='#')
 				i.icon-arrow-up
 		// jQuery
-		script(src='js/jquery.min.js')
+		script(src='/js/jquery.min.js')
 		// jQuery Easing
-		script(src='js/jquery.easing.1.3.js')
+		script(src='/js/jquery.easing.1.3.js')
 		// Bootstrap
-		script(src='js/bootstrap.min.js')
+		script(src='/js/bootstrap.min.js')
 		// Waypoints
-		script(src='js/jquery.waypoints.min.js')
+		script(src='/js/jquery.waypoints.min.js')
 		// Carousel
-		script(src='js/owl.carousel.min.js')
+		script(src='/js/owl.carousel.min.js')
 		// countTo
-		script(src='js/jquery.countTo.js')
+		script(src='/js/jquery.countTo.js')
 		// Stellar Parallax
-		script(src='js/jquery.stellar.min.js')
+		script(src='/js/jquery.stellar.min.js')
 		// Magnific Popup
-		script(src='js/jquery.magnific-popup.min.js')
-		script(src='js/magnific-popup-options.js')
-		script(src='js/moment.min.js')
-		script(src='js/bootstrap-datetimepicker.min.js')
+		script(src='/js/jquery.magnific-popup.min.js')
+		script(src='/js/magnific-popup-options.js')
+		script(src='/js/moment.min.js')
+		script(src='/js/bootstrap-datetimepicker.min.js')
 		// Main
-		script(src='js/main.js')
+		script(src='/js/main.js')

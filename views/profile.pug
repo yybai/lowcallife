@@ -4,7 +4,7 @@ html
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		title Savory — Free Website Template, Free HTML5 Template by GetTemplates.co
+		title LOWCAL LIFE — KEEP HEALTHY EVERYDAY!
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		meta(name='description', content='Free HTML5 Website Template by GetTemplates.co')
 		meta(name='keywords', content='free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive')
@@ -83,7 +83,7 @@ html
 									span
 										a#logout(href='/user/logout' style="color:black") Logout
 
-			//- div#gtco-header.gtco-cover.gtco-cover-sm.row(role='banner', style='background-image: url(images/img_bg_2.jpg);border:1px solid red;', data-stellar-background-ratio='0.5')
+			//- header#gtco-header.gtco-cover(role='banner', style='background-image:url(images/background4.jpg);position:absolute;z-index:-1;height:550px;', data-stellar-background-ratio='0.5')
 			div(style="margin-top:80px;" class="text-center")
 
 				i(class="fa fa-star")
@@ -156,7 +156,7 @@ html
 
 								button(id="intake-search" class="btn btn-info" style="width:100%") SEARCH
 
-								button(id="intake-submit" class="btn btn-info" style="width:100%") SAVE
+								//- button(id="intake-submit" class="btn btn-info" style="width:100%") SAVE
 						hr(style="max-width:150px;border-width:3px;border-color:orange;")
 						
 			div(id="searchDiv" style="max-width:1500px; margin-left:auto;margin-right:auto; margin-top:50px;" class="row")
@@ -173,10 +173,12 @@ html
 					hr(style="border-width:3px; border-color:orange;width:50px;" id="totalDivide")
 					div#dailyTotal
 					div(id="recalculate" class="btn btn-info" style="margin-top:-31px;float:right") RE-ENTER
+					span(id="intake-submit" class="btn btn-info" style="margin-top:-31px;float:right") SUBMIT
+					
 
-
-			.gtco-section(style="")
-				.gtco-container(style=";max-width: 1300px;")
+			.gtco-section(style="  ")
+				.gtco-container(style=";max-width: 1300px; ")
+					
 					.row(style="")
 						hr(style="max-width:150px;border-width:3px;border-color:orange;")
 						.col-md-8.col-md-offset-2.text-center.gtco-heading
@@ -194,21 +196,21 @@ html
 									span Statistic table is the place where you can manage your saved data. It shows the amount of calories saved on each day. You can also click delete to delete a certain row.
 									
 					.row(style="")
-						.col-lg-6.col-md-6.col-sm-6
-							div(id="forCal" style="margin-top:20px; box-shadow:5px 5px 10px gray;" class="fh5co-card-item " data-toggle="popover" title="Calory Graph" data-content="With X axis as the date, Y axis as the total calory which saved on that day.")
+						.col-lg-6.col-md-6.col-sm-6(style="box-shadow:-5px 0px 30px")
+							div(id="forCal" style="margin-top:20px; " class="fh5co-card-item " data-toggle="popover" title="Calory Graph" data-content="With X axis as the date, Y axis as the total calory which saved on that day.")
 								canvas(id="calChart" )
 								div(style="height:100px;")
 								.fh5co-text
 									h2 Intake Calory Graph
-									p Far far away, behind the word mountains, far from the countries Vokalia..
+									p Shows the change of your submitted calory data. When you click submit after selecting food, the total calory will be saved to the database.
 
-						.col-lg-6.col-md-6.col-sm-6
-							div(id='forWeight' style="margin-top:20px; box-shadow:5px 5px 10px gray;" class="fh5co-card-item")
+						.col-lg-6.col-md-6.col-sm-6(style="box-shadow:5px 0px 30px")
+							div(id='forWeight' style="margin-top:20px; " class="fh5co-card-item")
 								canvas(id="weightChart" )
 								div(style="height:100px;")
 								.fh5co-text
-									h2 Fresh Mushrooms
-									p Far far away, behind the word mountains, far from the countries Vokalia..
+									h2 Weight Graph
+									p Shows the change of your submitted weight data. When you click submit, not only the total calory will be saved, your current weight value will also be saved.
 					hr(style="max-width:150px;border-width:3px;border-color:orange;")
 					.row(style="margin-top:20px; margin-bottom:20px;")
 
@@ -244,8 +246,8 @@ html
 							i(class="fa fa-bullhorn fa-3x")
 							div(style="")
 								
-								p When we construct the graph, we add the total number of calories of each day. For example, if a user saved intake calories more than once in a day, there will be more than two rows which contain the saved calories. Therefore, the total calory on the graph will be the total amount on that day.
-
+								p &nbsp;&nbsp;&nbsp;&nbsp;When we construct the graph, we add the total number of calories of each day. For example, if a user saved intake calories more than once in a day, there will be more than two rows which contain the saved calories. Therefore, the total calory on the graph will be the total amount on that day.
+								p &nbsp;&nbsp;&nbsp;&nbsp;The weight we show on graph also depends on this table. If a user saved two or more calory data in a day, we only use the weight data in last submission to construct weight graph. So make sure you change your new weight before your last submission.
 
 						//- .col-lg-4.col-md-4.col-sm-6
 						//-	 a.fh5co-card-item.image-popup(href='images/img_1.jpg')
@@ -270,13 +272,28 @@ html
 						//-			 p
 						//-				 span.price.cursive-font $19.15
 
-			.gtco-cover.gtco-cover-sm(style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
-				.overlay
-				.gtco-container.text-center
-					.display-t
-						.display-tc
-							h1 “ Their high quality of service makes me back over and over again!”
-							p — John Doe, CEO of XYZ Co.
+
+
+
+			//- .gtco-cover.gtco-cover-sm(style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+			//- 	.overlay
+			//- 	.gtco-container.text-center
+			//- 		.display-t
+			//- 			.display-tc
+			//- 				h1 “ Their high quality of service makes me back over and over again!”
+			//- 				p — John Doe, CEO of XYZ Co.
+
+
+
+
+
+
+
+
+
+
+
+
 			//- #gtco-subscribe
 			//- .gtco-container
 			//-   .row.animate-box
@@ -307,11 +324,11 @@ html
 									li
 										a(href='#')
 										i.icon-mail2
-										|  info@GetTemplates.co
-									li
-										a(href='#')
-										i.icon-chat
-										|  Live Chat
+										|  info@lowcallife.com
+									//- li
+									//- 	a(href='#')
+									//- 	i.icon-chat
+									//- 	|  Live Chat
 							.gtco-widget
 								h3 Get Social
 								ul.gtco-social-icons
