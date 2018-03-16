@@ -383,7 +383,7 @@ function blurElement(element, size) {
 		'-moz-transition':'all 1.5s ease-out',
 		'-o-transition':'all 1.5s ease-out'
 	});
-  }
+}
   'use strict';
   
   var placeholders = document.querySelectorAll('.styled-input__placeholder-text'),
@@ -458,14 +458,14 @@ function blurElement(element, size) {
   
   
   
-  $( document ).ready(function() {
+$( document ).ready(function() {
 	$('[data-toggle="popover"]').popover();   
 	$('#recalculate').hide();
 	$('#totalDivide').hide();
 	$('#changeWeight').hide();
 	$('#showUpdate').click(function(){
-	  $('#changeWeight').show();
-	  $('#showUpdate').hide();
+		$('#changeWeight').show();
+	 	$('#showUpdate').hide();
 	})
 	$('#cancelWeight').click(function(){
 	  $('#changeWeight').hide();
@@ -485,7 +485,8 @@ function blurElement(element, size) {
 	  $('#showUser').show();
 	})
   
-  
+	$('#intake-submit').hide();
+
 	$('#userFeedback').hide();
 	$('#hideFeedback').hide();
 	$('#showFeedback').click(function(){
@@ -557,7 +558,9 @@ function blurElement(element, size) {
   
 	var total_cal = 0;
 	var intake_list = [];
-	var nutrion = 0 ;
+	var nutrionCal = 0 ;
+	var nutrionPro = 0 ;
+	var nutrionSugar = 0;
 	var hr = "<hr>"
   
 	$('#intake-search').click(function(){
@@ -573,7 +576,8 @@ function blurElement(element, size) {
 		success:function(result){
 		  $('#searchResult').html("");
 		  result.list.item.forEach(function(i){
-			var row = '<li class="container" id="'+i.ndbno+'">';
+			var row = '<li type="button" class="container" id="'+i.ndbno+'" data-toggle="modal" data-target="#myModal">';
+
 			row += '<p>' + i.name + '</p>';
 			row += '</li>';
 			
@@ -590,45 +594,161 @@ function blurElement(element, size) {
 		}
 	  })
 	})
-  
+	
   
 	$('#recalculate').click(function(){
-	  $("#dailyResult").html("");
-	  $("#dailyTotal").html("");
-	  total_cal = 0;
-	  $('#recalculate').hide();
+		document.getElementById("itemQuantity").setAttribute("style", "border:2px solid rgba(0, 0, 0, 0.1)");
+		document.getElementById("itemQuantity").value = 1;
+
+		$("#dailyResult").html("");
+		$("#dailyTotal").html("");
+		total_cal = 0;
+		$('#recalculate').hide();
+		$('#intake-submit').hide();
+		$("#forTotal").val(0);
 	})
-  
-  
+	var ndbno = 0;
+	var elementVal = 0;
+	var elementName = "";
 	$("#searchResult").on("click",".container",function(){
-	  $('#recalculate').show();
-	  $('#totalDivide').show();
-	  console.log(  $(this).attr('id')  );
-	  var ndbno = $(this).attr('id');
-	  $.ajax({
-		url:"https://api.nal.usda.gov/ndb/V2/reports?api_key=V9HNK7n5Os363SabjLiwkcSa3m3HWP73M8rX4f2V&type=f&format=json&ndbno="+ndbno,
-		success:function(result){
-		
-		  //find nutrient id = 208 which is "Energy" = "Calory"
-		  for (i=0;i<result.foods[0].food.nutrients.length;i++){
-			if (result.foods[0].food.nutrients[i].nutrient_id == "208"){
-			  nutrion = result.foods[0].food.nutrients[i].value;
+		// $('#recalculate').show();
+		// $('#intake-submit').show();
+		$('#totalDivide').show();
+		// console.log(  $(this).attr('id')  );
+		ndbno = $(this).attr('id');
+		$.ajax({
+			url:"https://api.nal.usda.gov/ndb/V2/reports?api_key=V9HNK7n5Os363SabjLiwkcSa3m3HWP73M8rX4f2V&type=f&format=json&ndbno="+ndbno,
+			success:function(result){
+			
+				//find nutrient id = 208 which is "Energy" = "Calory"
+				for (i=0;i<result.foods[0].food.nutrients.length;i++){
+					if (result.foods[0].food.nutrients[i].nutrient_id == "208"){
+					nutrionCal = result.foods[0].food.nutrients[i].value;
+					
+					}
+				}
+
+
+				//find nutrition id = 203 which is "Protein"
+				for (i=0;i<result.foods[0].food.nutrients.length;i++){
+					if (result.foods[0].food.nutrients[i].nutrient_id == "203"){
+					nutrionPro = result.foods[0].food.nutrients[i].value;
+					
+					}
+				}
+
+				for (i=0;i<result.foods[0].food.nutrients.length;i++){
+					if (result.foods[0].food.nutrients[i].nutrient_id == "269"){
+					nutrionSugar = result.foods[0].food.nutrients[i].value;
+					
+					}
+				}
+
+
+				$('#modal-name').html(result.foods[0].food.desc.name);
+				$('#proteinValue').html(nutrionPro);
+				$('#sugarsValue').html(nutrionSugar);
+				$('#caloryValue').html(nutrionCal);
+				elementVal = nutrionCal;
+				elementName = result.foods[0].food.desc.name;
+				// $('#caloryValue').attr('value') = nutrion;
+				
+				// $('#modal-name').val(result.foods[0].food.desc.name);
+
+
+				var i = parseInt(nutrionCal);
+				total_cal = total_cal + i;
+				// $("#dailyResult").append("<div id='"+ndbno+"' value= "+nutrion+"  >"+ result.foods[0].food.desc.name+" <br> <b>CALORY : </b> " + nutrion + "<br> </div>");
+				// $("#dailyTotal").html("Total calories you take today is: <b>" + total_cal + "</b>");
+				// $("#forTotal").val(total_cal);
+
+
+
+
+				// $('#saveSelect').click(function(){
+				// 	console.log("hi");
+				// 	var i = parseInt(nutrion);
+				// 	total_cal = total_cal + i;
+				// 	$("#dailyResult").append(result.foods[0].food.desc.name+" <br> <b>CALORY : </b> " + nutrion + "<br>");
+				// 	$("#dailyTotal").html("Total calories you take today is: <b>" + total_cal + "</b>");
+				// 	$("#forTotal").val(total_cal);
+				// })
 			}
-		  }
-  
-		  
-		  var i = parseInt(nutrion);
-		  total_cal = total_cal + i;
-		  
-		  $("#dailyResult").append(result.foods[0].food.desc.name+" <br> <b>CALORY : </b> " + nutrion + "<br>");
-		  $("#dailyTotal").html("Total calories you take today is: <b>" + total_cal + "</b>");
-		  $("#forTotal").val(total_cal);
-		}
+			
+		})
+
+
 		
-	  })
-	  
-  
+	
 	});
+	// if($('#deleteSelect').data('clicked')){
+	// 	console.log("hi");
+	// }
+	var itemQuant = 1;
+	var isNum = true;
+	$('#quantityAlert').hide();
+	$('#itemQuantity').keyup(function(){
+		// if($('#itemQuantity').val()){
+		// 	console.log( $('#itemQuantity').val()  );
+		// }
+		var quantity = parseInt($('#itemQuantity').val());
+		if((   typeof quantity == 'number') && ($('#itemQuantity').val()) ){
+			document.getElementById("itemQuantity").setAttribute("style", "border-color:orange");
+			console.log( "yes" );
+			$('#quantityAlert').hide();
+			itemQuant = $('#itemQuantity').val();
+			isNum = true;
+		}else{
+			console.log("no");
+			document.getElementById("itemQuantity").setAttribute("style", "border-color:red");
+			$('#quantityAlert').show();
+			isNum = false;
+
+		}
+	})
+
+	$('#saveSelect').click(function(){
+		console.log(isNum);
+		if(isNum == false){
+			alert("You have to enter quantity number!");
+			total_cal = total_cal - elementVal;
+			if(total_cal == 0){
+				$('#recalculate').hide();
+				$('#intake-submit').hide();
+			}
+			document.getElementById("itemQuantity").setAttribute("style", "border:2px solid rgba(0, 0, 0, 0.1)");
+			document.getElementById("itemQuantity").value = 1;
+			$('#quantityAlert').hide();
+			isNum = true;
+			return;
+		}
+		$('#recalculate').show();
+		$('#intake-submit').show();
+		console.log(itemQuant);
+		
+		total_cal = total_cal + (  itemQuant - 1   ) * elementVal;
+		elementVal = elementVal * itemQuant;
+		
+
+
+
+		$("#dailyResult").append("<div id='"+ndbno+"' value= "+elementVal+"  >"+ elementName+" <br> <b>CALORY : </b> " + elementVal + ", <b> Quantity : </b>" + itemQuant + "  <br> </div>");
+		$("#dailyTotal").html("Total calories you take today is: <b>" + total_cal + "</b>");
+		$("#forTotal").val(total_cal);
+		document.getElementById("itemQuantity").setAttribute("style", "border:2px solid rgba(0, 0, 0, 0.1)");
+		document.getElementById("itemQuantity").value = 1;
+	});
+	$('#deleteSelect').click(function(){
+		total_cal = total_cal - elementVal;
+		elementVal =0;
+		elementName = "";
+		$('#quantityAlert').hide();
+		document.getElementById("itemQuantity").setAttribute("style", "border:2px solid rgba(0, 0, 0, 0.1)");
+		document.getElementById("itemQuantity").value = 1;
+
+	})
+
+
 	$('#registBACK').hide();
 	$(".welcome_words").click(function(){
   
