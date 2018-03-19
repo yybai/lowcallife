@@ -82,7 +82,7 @@ router.get('/', (req, res, next) => {
 
         }
     } else {
-        res.redirect('/user/login')
+        res.redirect('/')
     }
 
 
@@ -92,7 +92,12 @@ router.get('/', (req, res, next) => {
 
 
 router.get('/edit',(req,res,next) =>{
-    res.render('edit',{x:req.user})
+    if(req.user){
+        res.render('edit',{x:req.user})
+    }else{
+        res.redirect('/')
+    }
+    
 })
 
 

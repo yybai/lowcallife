@@ -352,7 +352,7 @@ html
 			//-			 input#email.form-control(type='email', placeholder='Your Email')
 			//-		 .col-md-6.col-sm-6
 			//-		   button.btn.btn-default.btn-block(type='submit') Subscribe
-			footer#gtco-footer(role='contentinfo', style='background-image: url(images/img_bg_1.jpg)', data-stellar-background-ratio='0.5')
+			footer#gtco-footer(role='contentinfo', style='background-image: url(images/background3.jpg)', data-stellar-background-ratio='0.5')
 				.overlay
 				.gtco-container
 					.row.row-pb-md
@@ -362,39 +362,38 @@ html
 								ul.gtco-quick-contact
 									li
 										a(href='#')
-										i.icon-phone
-										|  +1 234 567 890
+											i.icon-phone
+											|  +1 234 56789
 									li
 										a(href='#')
-										i.icon-mail2
-										|  info@lowcallife.com
+											i.icon-mail2
+											|  leobai9188@gmail.com
 									//- li
 									//- 	a(href='#')
-									//- 	i.icon-chat
-									//- 	|  Live Chat
+									//- 		i.icon-chat
+									//- 		|  Live Chat
 							.gtco-widget
 								h3 Get Social
 								ul.gtco-social-icons
 									li
 										a(href='#')
-										i.icon-twitter
+											i.icon-twitter
+
 									li
 										a(href='#')
-										i.icon-facebook
+											i.icon-facebook
 									li
 										a(href='#')
-										i.icon-linkedin
+											i.icon-linkedin
 									li
 										a(href='#')
-										i.icon-dribbble
+											i.icon-dribbble
 						.col-md-12.text-center.copyright
 							p
 								small.block © 2016 Free HTML5. All Rights Reserved.
 								small.block
 									| Designed by 
 									a(href='http://gettemplates.co/', target='_blank') GetTemplates.co
-									|  Demo Images: 
-									a(href='http://unsplash.com/', target='_blank') Unsplash
 
 		.gototop.js-top
 			a.js-gotop(href='#')
@@ -541,25 +540,31 @@ html
 				type: 'line',
 				data: {
 					labels: callable,
+					
 					datasets: [{
 						label: 'Intake Calories',
 						data: caldata,
+
 						//- backgroundColor: ['rgba(255,255,255,1)'
 						//- ],
 						//- borderColor: [
 						//-	 'rgba(0,0,0,5)'
 						//- ],
-						
+						pointBackgroundColor:'rgba(0,0,0,1)',
 						borderColor:'rgba(0,0,0,1)',
 						borderWidth: 1,
-						fill:false
+						fill:false,
+						pointRadius:2,
+						pointHitRadius:3
 					},{
 						label: 'GOAL for the day',
 						data: healthyCal,
 						borderColor:'rgba(255,0,17,1)',
+						pointBackgroundColor:'rgba(255,0,17,1)',
 						borderWidth: 1,
-						fill:false
-
+						fill:false,
+						pointRadius:2,
+						pointHitRadius:3
 					}
 					
 					]
@@ -569,6 +574,10 @@ html
 					tooltips:{
 						mode:'index',
 					},
+					//- title:{
+					//- 	display:true,
+					//- 	text:'Calory Table'
+					//- },
 					scales: {
 						yAxes: [{
 							
