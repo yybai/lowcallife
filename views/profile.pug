@@ -160,7 +160,7 @@ html
 								button(id="intake-search" class="btn btn-info" style="width:100%") SEARCH
 
 								//- button(id="intake-submit" class="btn btn-info" style="width:100%") SAVE
-						hr(style="max-width:150px;border-width:3px;border-color:orange;")
+						hr(style="max-width:150px;border-width:3px;border-color:orange; margin-left:auto;margin-right:auto;" )
 						
 			div(id="searchDiv" style="max-width:1500px; margin-left:auto;margin-right:auto; margin-top:50px;" class="row")
 				#myModal.modal.fade
@@ -219,11 +219,11 @@ html
 					span(id="intake-submit" class="btn btn-info" style="margin-top:-31px;float:right") SUBMIT
 					
 
-			.gtco-section(style="  ")
-				.gtco-container(style=";max-width: 1300px; ")
+			.gtco-section(style=" ")
+				.gtco-container(style="max-width: 1300px;")
 					
-					.row(style="")
-						hr(style="max-width:150px;border-width:3px;border-color:orange;")
+					.row(style=" ")
+						hr(style="max-width:150px;border-width:3px;border-color:orange;margin-left:auto;margin-right:auto;")
 						.col-md-8.col-md-offset-2.text-center.gtco-heading
 							h2.cursive-font.primary-color Statistics
 							ul(style="float:left")
@@ -240,21 +240,21 @@ html
 									
 					.row(style="")
 						.col-lg-6.col-md-6.col-sm-6(style="box-shadow:-5px 0px 30px")
-							div(id="forCal" style="margin-top:20px; " class="fh5co-card-item " data-toggle="popover" title="Calory Graph" data-content="With X axis as the date, Y axis as the total calory which saved on that day.")
-								canvas(id="calChart" )
+							div(id="forCal" style="margin-top:20px; border-radius:20px; " class="fh5co-card-item " data-toggle="popover" title="Calory Graph" data-content="With X axis as the date, Y axis as the total calory which saved on that day.")
+								canvas(id="calChart")
 								div(style="height:100px;")
 								.fh5co-text
 									h2 Intake Calory Graph
 									p Shows the change of your submitted calory data. When you click submit after selecting food, the total calory will be saved to the database.
 
 						.col-lg-6.col-md-6.col-sm-6(style="box-shadow:5px 0px 30px")
-							div(id='forWeight' style="margin-top:20px; " class="fh5co-card-item")
+							div(id='forWeight' style="margin-top:20px; border-radius:20px;" class="fh5co-card-item")
 								canvas(id="weightChart" )
 								div(style="height:100px;")
 								.fh5co-text
 									h2 Weight Graph
 									p Shows the change of your submitted weight data. When you click submit, not only the total calory will be saved, your current weight value will also be saved.
-					hr(style="max-width:150px;border-width:3px;border-color:orange;")
+					hr(style="max-width:150px;border-width:3px;border-color:orange;margin-left:auto;margin-right:auto;margin-top:80px;")
 					.row(style="margin-top:20px; margin-bottom:20px;")
 
 						.col-md-8.col-md-offset-2.text-center.gtco-heading
@@ -327,7 +327,98 @@ html
 			//- 				p — John Doe, CEO of XYZ Co.
 
 
+			#gtco-counter.gtco-section(style="")
 
+				h.cursive-font.primary-color(style="font-size:50px;") TODAYS SPECIAL
+				.cont.s--inactive
+					// cont inner start
+					.cont__inner
+						// el start
+						.el
+							.el__overflow
+								.el__inner
+									.el__bg(id="s5url" style="background-image: url(http://bramptonist.com/wp-content/uploads/2016/03/Sushi-House-Brampton-2957.jpg);background-size:cover;background-position:center")
+									.el__preview-cont
+										h2.el__heading(id="s1title" style="font-size:40px;") SUSHI
+									.el__content
+										.el__text(id="s5name") SUSHI
+										.el__close-btn
+										.detail(id="s5url" style="position:absolute;color:white;background-color:rgba(107,107,107,0.5);bottom:0;width:100%;margin-left:-30px;")
+											p(id="s5detail") A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers.
+							//- .el__index
+							//- 	.el__index-back 1
+							//- 	.el__index-front
+							//- 		.el__index-overlay(data-index='1') 1
+						// el end
+						// el start
+						.el
+							.el__overflow
+								.el__inner
+									.el__bg(id="s5url" style="background-image: url(https://www.davisonorchards.ca/assets/img/recipes/spinach-and-chicken-salad/spinach-and-chicken-salad-01.jpg);background-size:cover;background-position:center")
+									.el__preview-cont
+										h2.el__heading(id="s2title" style="font-size:40px;") SALAD
+									.el__content
+										.el__text(id="s5name") SALAD
+										.el__close-btn
+										.detail(id="s5url" style="position:absolute;color:white;background-color:rgba(107,107,107,0.5);bottom:0;width:100%;margin-left:-30px;")
+											p(id="s5detail") A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers.
+							//- .el__index
+							//- 	.el__index-back 2
+							//- 	.el__index-front
+							//- 		.el__index-overlay(data-index='2') 2
+						// el end
+						// el start
+						.el
+							.el__overflow
+								.el__inner
+									.el__bg(id="s5url" style="background-image: url(http://matoisushi.ca/sushi/images/slide-02.jpg?crc=4040501543);background-size:cover;background-position:center")
+									.el__preview-cont
+										h2.el__heading(id="s3title" style="font-size:40px;") SUSHI
+									.el__content
+										.el__text(id="s5name") SUSHI
+										.el__close-btn
+										.detail(id="s5url" style="position:absolute;color:white;background-color:rgba(107,107,107,0.5);bottom:0;width:100%;margin-left:-30px;")
+											p(id="s5detail") A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers.
+							//- .el__index
+							//- 	.el__index-back 3
+							//- 	.el__index-front
+							//- 		.el__index-overlay(data-index='3') 3
+						// el end
+						// el start
+						.el
+							.el__overflow
+								.el__inner
+									.el__bg(id="s5url" style="background-image: url(http://www.eatwisconsincheese.com/images/Recipe/PF641MIXEDHOLIDAYX106_alt1-h.jpg);background-size:cover;background-position:center")
+									.el__preview-cont
+										h2.el__heading(id="s4title" style="font-size:40px;") CHEESCAKE
+									.el__content
+										.el__text(id="s5name") CHEESCAKE
+										.el__close-btn
+										.detail(id="s5url" style="position:absolute;color:white;background-color:rgba(107,107,107,0.5);bottom:0;width:100%;margin-left:-30px;")
+											p(id="s5detail") A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers.
+							//- .el__index
+							//- 	.el__index-back 4
+							//- 	.el__index-front
+							//- 		.el__index-overlay(data-index='4') 4
+						// el end
+						// el start
+						.el
+							.el__overflow
+								.el__inner
+									.el__bg(id="s5url" style="background-image: url(https://www.africanbites.com/wp-content/uploads/2014/12/IMG_1128-3.jpg);background-size:cover;background-position:center")
+									.el__preview-cont
+										h2.el__heading(id="s5title" style="font-size:40px;") STEAK
+									.el__content
+										.el__text(id="s5name") STEAK
+										.el__close-btn
+										.detail( style="position:absolute;color:white;background-color:rgba(107,107,107,0.5);bottom:0;width:100%;margin-left:-30px;")
+											p(id="s5detail") A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers.
+							//- .el__index
+							//- 	.el__index-back 5
+							//- 	.el__index-front
+							//- 		.el__index-overlay(data-index='5') 5
+						// el end
+					// cont inner end
 
 
 

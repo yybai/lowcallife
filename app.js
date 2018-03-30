@@ -43,6 +43,35 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
+
+// passport.use('local-login',new LocalStrategy({
+// 	usernameField : 'username',
+// 	passwordField : 'password',
+// 	passReqToCalback : true
+// }, function (req,username,password,done) {
+
+// }))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //router setup
 const index = require('./routes/index');
 const students = require('./routes/students');
